@@ -15,7 +15,7 @@ public class ChangeCNChar {
 		if(nds.util.Validator.isNull(msg)){
 			return msg;
 		}
-		msg = msg.replace(U1, LEFT_QUOTES).replace(U2, RIGHT_QUOTES).replace(U3, ELLIPSIS).replace(U4, ANDS);
+		msg = msg.replace(U1, LEFT_QUOTES).replace(U2, RIGHT_QUOTES).replace(U3, ELLIPSIS);//.replace(U4, ANDS);
 		//msg = msg.replace(U2, RIGHT_QUOTES);
 		//msg = msg.replace(U3, ELLIPSIS);
 		return msg;
