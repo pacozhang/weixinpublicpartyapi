@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.lang.RandomStringUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -132,8 +133,9 @@ public class GetPublicInfo {
 				}catch(Exception e) {
 					
 				}
-				ipath+="/"+wpc.getWxPublic().getDoMain()+ "/web_client/wxappcode.jpg";;
-				dpath="/servlets/userfolder/web_client/wxappcode.jpg";
+				String qrcode=RandomStringUtils.randomAlphanumeric(12)+".jpg";
+				ipath+="/"+wpc.getWxPublic().getDoMain()+ "/web_client/"+qrcode;
+				dpath="/servlets/userfolder/web_client/"+qrcode;
 				logger.debug("dpath->"+dpath);
 				logger.debug("ipath->"+ipath);
 				
@@ -146,7 +148,7 @@ public class GetPublicInfo {
 					BufferedImage image = ImageIO.read(get.getResponseBodyAsStream());
 					
 					//±£´æ¶þÎ¬Âë
-					File file=new File(ipath.replace("wxappcode.jpg", ""));
+					File file=new File(ipath.replace(qrcode, ""));
 					if(!file.exists()) {
 						file.mkdirs();
 						logger.debug("mkdirs");
