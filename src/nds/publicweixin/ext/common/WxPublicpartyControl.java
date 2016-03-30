@@ -80,7 +80,7 @@ public class WxPublicpartyControl {
 	public JSONObject getPreAccessToken() {
 		JSONObject patjo=new JSONObject();
 		logger.debug("wpp.getPre_authorized_token:"+wpp.getPre_authorized_token()+",wpp.getPattime():"+wpp.getPattime()+",System.currentTimeMillis()"+System.currentTimeMillis());
-		if(nds.util.Validator.isNull(wpp.getPre_authorized_token())||wpp.getPattime()<System.currentTimeMillis()) {
+		//if(nds.util.Validator.isNull(wpp.getPre_authorized_token())||wpp.getPattime()<System.currentTimeMillis()) {
 			GetPreAuthorizerCode gpat=new GetPreAuthorizerCode();
 			patjo=gpat.getPreAuthorizerCode(this);
 			
@@ -92,8 +92,9 @@ public class WxPublicpartyControl {
 				}
 			}
 			return patjo;
-		}
+		//}
 		
+		/*
 		try {
 			patjo.put("code", "0");
 			patjo.put("message", "success");
@@ -103,6 +104,7 @@ public class WxPublicpartyControl {
 			e.printStackTrace();
 		}
 		return patjo;
+		*/
 	}
 
 	public WePublicparty getWePublicparty() {
