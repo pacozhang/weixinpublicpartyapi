@@ -142,6 +142,8 @@ public class GetUserAuthorization {
 		String pappid=wu.getAppId();
 		String ppappid=wu.getPublicpartyappid();
 		
+		
+		/*
 		JSONObject atjo=wppc.getAccessToken();
 		//判断ACCESSTOKEN是否获取成功
 		if(atjo==null||!"0".equals(atjo.optString("code"))) {
@@ -156,10 +158,11 @@ public class GetUserAuthorization {
 		}
 		
 		String accesstoken=atjo.optJSONObject("data").optString("component_access_token");
+		*/
 		
-		String url=weixingetauthorizeruserinfo+accesstoken;
-		url=url.replaceFirst("$at$", jo.optString("access_token"));
-		url=url.replaceFirst("$openid$", jo.optString("openid"));
+		String url=weixingetauthorizeruserinfo;
+		url=url.replace("$at$", jo.optString("access_token"));
+		url=url.replace("$openid$", jo.optString("openid"));
 		
 		ValueHolder vh=null;
 		
