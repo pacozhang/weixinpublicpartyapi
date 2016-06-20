@@ -19,6 +19,7 @@ import nds.weixin.ext.WePublicpartyManger;
  * @author paco
  *
  */
+//ddddd
 public class GetAuthorizerAccessToken {
 	private static Logger logger= LoggerManager.getInstance().getLogger(GetAuthorizerAccessToken.class.getName());
 	private static String weixingetauthorizedaccesstoken=WebUtils.getProperty("weixin.get_authorized_access_token_URL","");
