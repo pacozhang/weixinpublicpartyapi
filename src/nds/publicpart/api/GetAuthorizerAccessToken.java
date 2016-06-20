@@ -124,4 +124,4 @@ public class GetAuthorizerAccessToken {
 		
 		return authorizeraccesstokeninfo;
 	}
-}//yyuuuzzz
+}//yy
